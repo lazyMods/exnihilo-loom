@@ -20,8 +20,12 @@ object ModBlocks {
         register("dust", DUST)
     }
 
-    private fun register(regName: String, block: Block, group: ItemGroup = ItemGroup.MISC) {
+    private fun register(regName: String, block: Block, group: ItemGroup = Ref.ITEM_GROUP) {
         Registry.register(Registry.BLOCK, Identifier(Ref.MOD_ID, regName), block)
-        Registry.register(Registry.ITEM, Identifier(Ref.MOD_ID, regName), BlockItem(block, Item.Settings().group(group)))
+        Registry.register(
+            Registry.ITEM,
+            Identifier(Ref.MOD_ID, regName),
+            BlockItem(block, Item.Settings().group(group))
+        )
     }
 }

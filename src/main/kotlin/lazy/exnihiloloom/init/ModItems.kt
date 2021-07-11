@@ -4,7 +4,6 @@ import lazy.exnihiloloom.item.ResourceItem
 import lazy.exnihiloloom.util.Ref
 import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
-import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
@@ -13,7 +12,7 @@ object ModItems {
 
     val SILKWORM = ResourceItem("silkworm")
     val COOKED_SILKWORM = Item(
-        Item.Settings().group(ItemGroup.MISC).food(FoodComponent.Builder().hunger(2).saturationModifier(.6f).build())
+        Item.Settings().group(Ref.ITEM_GROUP).food(FoodComponent.Builder().hunger(2).saturationModifier(.6f).build())
     )
 
     fun init() {
