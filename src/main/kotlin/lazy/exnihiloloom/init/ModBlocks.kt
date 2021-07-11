@@ -17,11 +17,11 @@ object ModBlocks {
     val DUST = FallingBlock(AbstractBlock.Settings.of(Material.AGGREGATE).strength(.7f).sounds(BlockSoundGroup.WOOL))
 
     fun init() {
-        register(DUST)
+        register("dust", DUST)
     }
 
-    private fun register(block: Block, group: ItemGroup = ItemGroup.MISC) {
-        Registry.register(Registry.BLOCK, Identifier(Ref.MOD_ID, "dust"), block)
-        Registry.register(Registry.ITEM, Identifier(Ref.MOD_ID, "dust"), BlockItem(block, Item.Settings().group(group)))
+    private fun register(regName: String, block: Block, group: ItemGroup = ItemGroup.MISC) {
+        Registry.register(Registry.BLOCK, Identifier(Ref.MOD_ID, regName), block)
+        Registry.register(Registry.ITEM, Identifier(Ref.MOD_ID, regName), BlockItem(block, Item.Settings().group(group)))
     }
 }
