@@ -13,18 +13,18 @@
     "sources": "https://example.com/"
   },
   "license": "GNU Lesser General Public License version 3 (LGPLv3)",
-  "icon": "assets/mod_name/icon.png",
+  "icon": "assets/exnihiloloom/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "com.mod_author.mod_id.ModName"
+        "value": "lazy.exnihiloloom.ExNihiloLoom"
       }
     ]
   },
   "mixins": [
-    "mod_id.mixins.json"
+    "exnihiloloom.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.3",
