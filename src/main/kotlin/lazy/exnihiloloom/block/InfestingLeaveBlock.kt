@@ -1,6 +1,7 @@
 package lazy.exnihiloloom.block
 
 import lazy.exnihiloloom.init.ModBlocks
+import lazy.exnihiloloom.util.BlockSettings
 import lazy.exnihiloloom.util.BlockUtils
 import net.minecraft.block.Block
 import net.minecraft.block.LeavesBlock
@@ -9,7 +10,7 @@ import net.minecraft.world.World
 
 
 //TODO: ITOPProvider
-class InfestingLeaveBlock : Block(BlockUtils.INFESTED_LEAVES_SETTINGS) {
+class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS) {
 
     companion object {
         fun finishInfestation(world: World, pos: BlockPos) {
