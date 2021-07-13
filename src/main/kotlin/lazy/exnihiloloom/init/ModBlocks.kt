@@ -1,5 +1,7 @@
 package lazy.exnihiloloom.init
 
+import lazy.exnihiloloom.block.InfestedLeaveBlock
+import lazy.exnihiloloom.block.InfestingLeaveBlock
 import lazy.exnihiloloom.util.Ref
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
@@ -15,17 +17,18 @@ import net.minecraft.util.registry.Registry
 object ModBlocks {
 
     val DUST = FallingBlock(AbstractBlock.Settings.of(Material.AGGREGATE).strength(.7f).sounds(BlockSoundGroup.WOOL))
+    val INFESTED_LEAVE = InfestedLeaveBlock()
+    val INFESTING_LEAVE = InfestingLeaveBlock()
 
     fun init() {
         register("dust", DUST)
+        register("infested_leaves", INFESTED_LEAVE)
+        register("infesting_leaves", INFESTING_LEAVE)
     }
 
-    private fun register(regName: String, block: Block, group: ItemGroup = Ref.ITEM_GROUP) {
+    private fun register(regName: String, block: Block, group: ItemGroup = Ref.ITEM_GROUP, item: Boolean = true) {
         Registry.register(Registry.BLOCK, Identifier(Ref.MOD_ID, regName), block)
-        Registry.register(
-            Registry.ITEM,
-            Identifier(Ref.MOD_ID, regName),
-            BlockItem(block, Item.Settings().group(group))
-        )
+        if (item)
+            Registry.register(Registry.ITEM, Identifier(Ref.MOD_ID, regName), BlockItem(block, Item.Settings().group(group)))
     }
 }
