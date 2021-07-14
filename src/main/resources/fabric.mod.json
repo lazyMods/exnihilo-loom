@@ -21,6 +21,12 @@
         "adapter": "kotlin",
         "value": "lazy.exnihiloloom.ExNihiloLoom"
       }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "lazy.exnihiloloom.client.ExNihiloLoomClient"
+      }
     ]
   },
   "mixins": [
