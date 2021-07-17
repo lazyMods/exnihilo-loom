@@ -1,7 +1,7 @@
-package lazy.exnihiloloom.item
+package lazy.exnihiloloom.common.item
 
-import lazy.exnihiloloom.block.InfestingLeaveBlock
-import lazy.exnihiloloom.util.Ref
+import lazy.exnihiloloom.common.block.InfestingLeaveBlock
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.block.LeavesBlock
 import net.minecraft.item.Item
 import net.minecraft.item.ItemUsageContext

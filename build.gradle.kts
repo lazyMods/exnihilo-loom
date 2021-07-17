@@ -14,6 +14,7 @@ group = mavenGroup
 minecraft {}
 repositories {}
 dependencies {
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     val minecraftVersion: String by project
     minecraft("com.mojang:minecraft:$minecraftVersion")
     val yarnMappings: String by project

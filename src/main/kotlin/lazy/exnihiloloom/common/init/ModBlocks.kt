@@ -1,8 +1,8 @@
-package lazy.exnihiloloom.init
+package lazy.exnihiloloom.common.init
 
-import lazy.exnihiloloom.block.InfestedLeaveBlock
-import lazy.exnihiloloom.block.InfestingLeaveBlock
-import lazy.exnihiloloom.util.Ref
+import lazy.exnihiloloom.common.block.InfestedLeaveBlock
+import lazy.exnihiloloom.common.block.InfestingLeaveBlock
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.FallingBlock

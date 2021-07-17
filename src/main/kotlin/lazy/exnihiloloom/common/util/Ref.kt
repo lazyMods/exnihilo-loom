@@ -1,4 +1,4 @@
-package lazy.exnihiloloom.util
+package lazy.exnihiloloom.common.util
 
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.minecraft.block.Blocks

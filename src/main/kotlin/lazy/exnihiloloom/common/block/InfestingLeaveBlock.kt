@@ -1,16 +1,21 @@
-package lazy.exnihiloloom.block
+package lazy.exnihiloloom.common.block
 
-import lazy.exnihiloloom.init.ModBlocks
-import lazy.exnihiloloom.util.BlockSettings
-import lazy.exnihiloloom.util.BlockUtils
+import lazy.exnihiloloom.common.config.ModConfig
+import lazy.exnihiloloom.common.init.ModBlocks
+import lazy.exnihiloloom.common.init.ModTiles
+import lazy.exnihiloloom.common.util.BlockSettings
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.block.Block
+import net.minecraft.block.BlockEntityProvider
 import net.minecraft.block.LeavesBlock
+import net.minecraft.block.entity.BlockEntity
 import net.minecraft.util.math.BlockPos
+import net.minecraft.world.BlockView
 import net.minecraft.world.World
 
 
 //TODO: ITOPProvider
-class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS) {
+class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), BlockEntityProvider {
 
     companion object {
         fun finishInfestation(world: World, pos: BlockPos) {
@@ -25,10 +30,9 @@ class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS) {
             if (!world.isClient) {
                 val nearbyLeaves: List<BlockPos> = getNearbyLeaves(world, pos)
                 nearbyLeaves.forEach {
-                    //TODO: Spread Change
-                    //if (random.nextDouble() <= Config.getSpreadChance()) {
-                    initiateInfestation(world, it)
-                    //}
+                    if (world.random.nextDouble() <= ModConfig.SPREAD_CHANGE.getAsDouble()) {
+                        initiateInfestation(world, it)
+                    }
                 }
             }
         }
@@ -43,6 +47,10 @@ class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS) {
             return nearbyLeaves
         }
 
+    }
+
+    override fun createBlockEntity(world: BlockView?): BlockEntity? {
+        return ModTiles.INFESTING_LEAVES?.instantiate()
     }
 }
 

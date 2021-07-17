@@ -1,7 +1,7 @@
-package lazy.exnihiloloom.init
+package lazy.exnihiloloom.common.init
 
-import lazy.exnihiloloom.item.ResourceItem
-import lazy.exnihiloloom.util.Ref
+import lazy.exnihiloloom.common.item.ResourceItem
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
 import net.minecraft.util.Identifier
