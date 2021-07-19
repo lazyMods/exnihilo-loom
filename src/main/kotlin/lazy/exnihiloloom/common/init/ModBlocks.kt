@@ -1,8 +1,8 @@
-package lazy.exnihiloloom.init
+package lazy.exnihiloloom.common.init
 
-import lazy.exnihiloloom.block.InfestedLeaveBlock
-import lazy.exnihiloloom.block.InfestingLeaveBlock
-import lazy.exnihiloloom.util.Ref
+import lazy.exnihiloloom.common.block.InfestedLeavesBlock
+import lazy.exnihiloloom.common.block.InfestingLeavesBlock
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.FallingBlock
@@ -17,8 +17,8 @@ import net.minecraft.util.registry.Registry
 object ModBlocks {
 
     val DUST = FallingBlock(AbstractBlock.Settings.of(Material.AGGREGATE).strength(.7f).sounds(BlockSoundGroup.WOOL))
-    val INFESTED_LEAVE = InfestedLeaveBlock()
-    val INFESTING_LEAVE = InfestingLeaveBlock()
+    val INFESTED_LEAVE = InfestedLeavesBlock()
+    val INFESTING_LEAVE = InfestingLeavesBlock()
 
     fun init() {
         register("dust", DUST)

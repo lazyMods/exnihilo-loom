@@ -12,7 +12,11 @@ version = modVersion
 val mavenGroup: String by project
 group = mavenGroup
 minecraft {}
-repositories {}
+
+repositories {
+    maven("https://lazy-maven-repo.herokuapp.com/")
+}
+
 dependencies {
     val minecraftVersion: String by project
     minecraft("com.mojang:minecraft:$minecraftVersion")
@@ -24,6 +28,8 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
+    val kConfigVersion: String by project
+    implementation("lazy:kconfig:$kConfigVersion")
 }
 tasks {
     val javaVersion = JavaVersion.VERSION_16

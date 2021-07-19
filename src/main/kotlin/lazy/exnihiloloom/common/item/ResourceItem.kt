@@ -1,7 +1,7 @@
-package lazy.exnihiloloom.item
+package lazy.exnihiloloom.common.item
 
-import lazy.exnihiloloom.block.InfestingLeaveBlock
-import lazy.exnihiloloom.util.Ref
+import lazy.exnihiloloom.common.block.InfestingLeavesBlock
+import lazy.exnihiloloom.common.util.Ref
 import net.minecraft.block.LeavesBlock
 import net.minecraft.item.Item
 import net.minecraft.item.ItemUsageContext
@@ -15,7 +15,7 @@ open class ResourceItem(private val resourceName: String) : Item(Settings().grou
             val blockState = context.world.getBlockState(context.blockPos)
             if (resItem.resourceName == "silkworm" && blockState.block is LeavesBlock) {
                 context.stack.decrement(1)
-                InfestingLeaveBlock.initiateInfestation(context.world, context.blockPos)
+                InfestingLeavesBlock.initiateInfestation(context.world, context.blockPos)
                 return ActionResult.SUCCESS
             }
         }
