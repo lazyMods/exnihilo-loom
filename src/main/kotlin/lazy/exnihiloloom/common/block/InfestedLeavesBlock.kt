@@ -8,7 +8,7 @@ import net.minecraft.block.entity.BlockEntity
 import net.minecraft.world.BlockView
 
 //TODO: Equivalent of IForgeShearable
-class InfestedLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), BlockEntityProvider {
+class InfestedLeavesBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), BlockEntityProvider {
 
     override fun createBlockEntity(world: BlockView?): BlockEntity? {
         return ModTiles.INFESTED_LEAVES?.instantiate()

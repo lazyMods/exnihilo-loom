@@ -15,7 +15,7 @@ import net.minecraft.world.World
 
 
 //TODO: ITOPProvider
-class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), BlockEntityProvider {
+class InfestingLeavesBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), BlockEntityProvider {
 
     companion object {
         fun finishInfestation(world: World, pos: BlockPos) {
@@ -30,7 +30,8 @@ class InfestingLeaveBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), Block
             if (!world.isClient) {
                 val nearbyLeaves: List<BlockPos> = getNearbyLeaves(world, pos)
                 nearbyLeaves.forEach {
-                    if (world.random.nextDouble() <= ModConfig.SPREAD_CHANGE.getAsDouble()) {
+                    if (world.random.nextDouble() <= ModConfig.SPREAD_CHANGE.get()) {
+                        println(ModConfig.SPREAD_CHANGE.get())
                         initiateInfestation(world, it)
                     }
                 }

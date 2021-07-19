@@ -1,13 +1,10 @@
 package lazy.exnihiloloom.common.config
 
-import ConfigEntry
-import net.fabricmc.loader.api.FabricLoader
+import lazy.kconfig.KConfig
 
 object ModConfig {
 
-    lateinit var SPREAD_CHANGE: ConfigEntry
-
-    fun init() {
-        SPREAD_CHANGE = ConfigParser.load(FabricLoader.getInstance().configDir.resolve("test.props")).first { it.key == "test" }
-    }
+    val SPREAD_CHANGE = KConfig.createConfigHolder<Double>("spreadChance")
+    val TICKS_BETWEEN_SPREAD_ATTEMPT = KConfig.createConfigHolder<Int>("ticksBetweenSpreadAttempt")
+    val SECONDS_TO_TRANSFORM_LEAVES = KConfig.createConfigHolder<Int>("secondsToTransformLeaves")
 }
