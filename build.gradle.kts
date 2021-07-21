@@ -14,7 +14,7 @@ group = mavenGroup
 minecraft {}
 
 repositories {
-    maven("https://lazy-maven-repo.herokuapp.com/")
+    maven("https://pkgs.dev.azure.com/lazyio/maven/_packaging/lazy/maven/v1")
 }
 
 dependencies {
@@ -29,7 +29,8 @@ dependencies {
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
     val kConfigVersion: String by project
-    implementation("lazy:kconfig:$kConfigVersion")
+    modImplementation("lazy:kconfig:$kConfigVersion")
+    include("lazy:kconfig:$kConfigVersion")
 }
 tasks {
     val javaVersion = JavaVersion.VERSION_16
