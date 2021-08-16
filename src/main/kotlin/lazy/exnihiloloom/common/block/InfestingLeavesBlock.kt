@@ -30,8 +30,8 @@ class InfestingLeavesBlock : Block(BlockSettings.INFESTED_LEAVES_SETTINGS), Bloc
             if (!world.isClient) {
                 val nearbyLeaves: List<BlockPos> = getNearbyLeaves(world, pos)
                 nearbyLeaves.forEach {
-                    if (world.random.nextDouble() <= ModConfig.SPREAD_CHANGE.get()) {
-                        println(ModConfig.SPREAD_CHANGE.get())
+                    if (world.random.nextDouble() <= ModConfig.SPREAD_CHANCE.get()) {
+                        println(ModConfig.SPREAD_CHANCE.get())
                         initiateInfestation(world, it)
                     }
                 }
