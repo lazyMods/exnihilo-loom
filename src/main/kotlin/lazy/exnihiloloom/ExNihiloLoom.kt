@@ -1,5 +1,6 @@
 package lazy.exnihiloloom
 
+import lazy.exnihiloloom.common.config.ModConfig
 import lazy.exnihiloloom.common.init.ModBlocks
 import lazy.exnihiloloom.common.init.ModItems
 import lazy.exnihiloloom.common.init.ModTiles
@@ -14,6 +15,6 @@ object ExNihiloLoom : ModInitializer {
         ModBlocks.init()
         ModTiles.init()
         ModItems.init()
-        KConfig.init(FabricLoader.getInstance().configDir.resolve("exnihiloloom.toml"))
+        ModConfig.init()
     }
 }
