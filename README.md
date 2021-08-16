@@ -3,7 +3,7 @@ Ex Nihilo: Loom is a port to Fabric of Ex Nihilo: Sequentia for Forge.
 
 # Links:
 
-* Ex Nihilo Sqeuentia:
+* Ex Nihilo Sequentia:
 	* GitHub - https://github.com/NovaMachina-Mods/ExNihiloSequentia
 
 # License
