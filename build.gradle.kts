@@ -33,7 +33,7 @@ dependencies {
     include("lazy:kconfig:$kConfigVersion")
 }
 tasks {
-    val javaVersion = JavaVersion.VERSION_16
+    val javaVersion = JavaVersion.VERSION_11
     withType<JavaCompile> {
         options.encoding = "UTF-8"
         sourceCompatibility = javaVersion.toString()

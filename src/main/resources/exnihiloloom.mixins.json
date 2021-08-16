@@ -1,12 +1,12 @@
 {
   "required": true,
   "package": "lazy.exnihiloloom.mixins",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_11",
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [],
   "server": [
-    "ClientPlayNetworkHandlerMixin"
+
   ]
 }
